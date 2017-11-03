@@ -1,0 +1,58 @@
+{
+    "$schema": "https://statics.teams.microsoft.com/sdk/v1.0/manifest/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.0",
+    "version": "1.0.0",
+    "id": "fb601c18-2b7e-40fb-959d-29a9700bd20b",
+    "packageName": "com.contoso.helloworld",
+    "developer": {
+        "name": "Contoso",
+        "websiteUrl": "https://www.microsoft.com",
+        "privacyUrl": "https://www.microsoft.com/privacy",
+        "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
+    },
+    "name": {
+        "short": "Hello World",
+        "full": "Hello World App for Microsoft Teams"
+    },
+    "description": {
+        "short": "Hello World App for Microsoft Teams",
+        "full": "This sample app provides a very simple app for Microsoft Teams. You can extend this to add more content and capabilities."
+    },
+    "icons": {
+        "outline": "contoso20x20.png",
+        "color": "contoso96x96.png"
+    },
+    "accentColor": "#60A18E",
+    "staticTabs": [{
+            "entityId": "com.contoso.helloworld.hellotab",
+            "name": "Hello Tab",
+            "contentUrl": "https://kteams.ngrok.io/hello",
+            "scopes": [
+                "personal"
+            ]
+        },
+        {
+            "entityId": "com.contoso.helloworld.abouttab",
+            "name": "About Hello World",
+            "contentUrl": "https://kteams.ngrok.io/about",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "configurableTabs": [{
+        "configurationUrl": "https://kteams.ngrok.io/configure",
+        "canUpdateConfiguration": true,
+        "scopes": [
+            "team"
+        ]
+    }],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [
+        "kteams.ngrok.io",
+        "*.kteams.ngrok.io"
+    ]
+}
