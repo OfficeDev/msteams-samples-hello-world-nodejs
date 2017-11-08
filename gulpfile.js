@@ -3,7 +3,7 @@ var zip = require('gulp-zip');
 
 gulp.task('generate-manifest', function() {
     gulp.src(['images/*', 'src/manifest.json'])
-        .pipe(zip('manifest.zip'))
+        .pipe(zip('helloworldapp.zip'))
         .pipe(gulp.dest('dist'));
 });
 
