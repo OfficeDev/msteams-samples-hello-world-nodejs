@@ -2,7 +2,7 @@
     "$schema": "https://statics.teams.microsoft.com/sdk/v1.0/manifest/MicrosoftTeams.schema.json",
     "manifestVersion": "1.0",
     "version": "1.0.0",
-    "id": "fb601c18-2b7e-40fb-959d-29a9700bd20b",
+    "id": "INSERT-A-GUID-HERE-TO-IDENTIFY-THE-APP",
     "packageName": "com.contoso.helloworld",
     "developer": {
         "name": "Contoso",
