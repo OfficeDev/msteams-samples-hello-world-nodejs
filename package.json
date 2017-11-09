@@ -21,6 +21,7 @@
     "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-zip": "^4.0.0"
   }
