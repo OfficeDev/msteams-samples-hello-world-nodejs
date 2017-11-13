@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/charlesprakash/msteams-nodejs-hello-world#readme",
   "dependencies": {
+    "botbuilder": "^3.11.0",
+    "botbuilder-teams": "^0.1.6",
     "express": "^4.16.2",
     "pug": "^2.0.0-rc.4"
   },

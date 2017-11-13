@@ -32,6 +32,10 @@ app.get('/configure', function(req, res) {
     res.render('configure');
 });
 
+// Adding a bot to our app
+var bot = require('./bot');
+app.post('/api/messages', bot.connector.listen());
+
 app.listen(process.env.PORT || 3333, function() {
     console.log('App started listening on port 3333');
 });
