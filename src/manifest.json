@@ -30,14 +30,6 @@
             "scopes": [
                 "personal"
             ]
-        },
-        {
-            "entityId": "com.contoso.helloworld.abouttab",
-            "name": "About Hello World",
-            "contentUrl": "https://mywebapp.azurewebsites.net/about",
-            "scopes": [
-                "personal"
-            ]
         }
     ],
     "configurableTabs": [{

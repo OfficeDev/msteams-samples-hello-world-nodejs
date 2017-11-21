@@ -24,10 +24,6 @@ app.get('/second', function(req, res) {
     res.render('second');
 });
 
-app.get('/about', function(req, res) {
-    res.render('about');
-});
-
 app.get('/configure', function(req, res) {
     res.render('configure');
 });
