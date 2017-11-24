@@ -2,7 +2,7 @@
     "$schema": "https://statics.teams.microsoft.com/sdk/v1.0/manifest/MicrosoftTeams.schema.json",
     "manifestVersion": "1.0",
     "version": "1.0.0",
-    "id": "INSERT-A-GUID-HERE-TO-IDENTIFY-THE-APP",
+    "id": "f1d45e19-196c-4c7f-9c95-24b3d9c2a1f0",
     "packageName": "com.contoso.helloworld",
     "developer": {
         "name": "Contoso",
@@ -39,6 +39,14 @@
             "team"
         ]
     }],
+    "bots": [
+        {
+          "botId": "a2e4e1b7-2811-4d93-8b5c-8633208f34e5",
+          "needsChannelSelector": false,
+          "isNotificationOnly": false,
+          "scopes": [ "team", "personal" ]
+        }
+      ],
     "permissions": [
         "identity",
         "messageTeamMembers"
