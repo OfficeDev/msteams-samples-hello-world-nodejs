@@ -26,14 +26,14 @@
     "staticTabs": [{
             "entityId": "com.contoso.helloworld.hellotab",
             "name": "Hello Tab",
-            "contentUrl": "https://mywebapp.azurewebsites.net/hello",
+            "contentUrl": "https://kteams.ngrok.io/hello",
             "scopes": [
                 "personal"
             ]
         }
     ],
     "configurableTabs": [{
-        "configurationUrl": "https://mywebapp.azurewebsites.net/configure",
+        "configurationUrl": "https://kteams.ngrok.io/configure",
         "canUpdateConfiguration": true,
         "scopes": [
             "team"
@@ -52,7 +52,7 @@
         "messageTeamMembers"
     ],
     "validDomains": [
-        "mywebapp.azurewebsites.net",
-        "*.mywebapp.azurewebsites.net"
+        "kteams.ngrok.io",
+        "*.kteams.ngrok.io"
     ]
 }

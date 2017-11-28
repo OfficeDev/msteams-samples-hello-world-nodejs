@@ -3,10 +3,13 @@
 
 var builder = require('botbuilder');
 var teams = require('botbuilder-teams');
+var config = require('config');
+
+var botConfig = config.get('bot');
 
 var connector = new teams.TeamsChatConnector({
-    appId: process.env.MICROSOFT_APP_ID,
-    appPassword: process.env.MICROSOFT_APP_PASSWORD
+    appId: botConfig.microsoftAppId,
+    appPassword: botConfig.microsoftAppPassword
 });
 
 var bot = new builder.UniversalBot(connector, function(session) {
