@@ -23,7 +23,8 @@
         "color": "contoso96x96.png"
     },
     "accentColor": "#60A18E",
-    "staticTabs": [{
+    "staticTabs": [
+        {
             "entityId": "com.contoso.helloworld.hellotab",
             "name": "Hello Tab",
             "contentUrl": "https://kteams.ngrok.io/hello",
@@ -32,21 +33,50 @@
             ]
         }
     ],
-    "configurableTabs": [{
-        "configurationUrl": "https://kteams.ngrok.io/configure",
-        "canUpdateConfiguration": true,
-        "scopes": [
-            "team"
-        ]
-    }],
+    "configurableTabs": [
+        {
+            "configurationUrl": "https://kteams.ngrok.io/configure",
+            "canUpdateConfiguration": true,
+            "scopes": [
+                "team"
+            ]
+        }
+    ],
     "bots": [
         {
-          "botId": "a2e4e1b7-2811-4d93-8b5c-8633208f34e5",
-          "needsChannelSelector": false,
-          "isNotificationOnly": false,
-          "scopes": [ "team", "personal" ]
+            "botId": "a2e4e1b7-2811-4d93-8b5c-8633208f34e5",
+            "needsChannelSelector": false,
+            "isNotificationOnly": false,
+            "scopes": [
+                "team",
+                "personal"
+            ]
         }
-      ],
+    ],
+    "composeExtensions": [
+        {
+            "botId": "a2e4e1b7-2811-4d93-8b5c-8633208f34e5",
+            "scopes": [
+                "personal",
+                "team"
+            ],
+            "commands": [
+                {
+                    "id": "greetCmd",
+                    "description": "Generate a greeting with the provided name",
+                    "title": "Greet",
+                    "initialRun": true,
+                    "parameters": [
+                        {
+                            "name": "nameToGreet",
+                            "description": "Enter the name of the person you want to greet",
+                            "title": "Whom to greet?"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
     "permissions": [
         "identity",
         "messageTeamMembers"
