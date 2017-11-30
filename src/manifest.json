@@ -62,15 +62,15 @@
             ],
             "commands": [
                 {
-                    "id": "greetCmd",
-                    "description": "Generate a greeting with the provided name",
-                    "title": "Greet",
+                    "id": "getRandomText",
+                    "description": "Gets some random text and images that you can insert in messages",
+                    "title": "Get random text",
                     "initialRun": true,
                     "parameters": [
                         {
-                            "name": "nameToGreet",
-                            "description": "Enter the name of the person you want to greet",
-                            "title": "Whom to greet?"
+                            "name": "cardTitle",
+                            "description": "Card title to use",
+                            "title": "Card title"
                         }
                     ]
                 }

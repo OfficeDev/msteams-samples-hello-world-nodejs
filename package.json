@@ -21,6 +21,7 @@
     "botbuilder-teams": "^0.1.6",
     "config": "^1.28.1",
     "express": "^4.16.2",
+    "faker": "^4.1.0",
     "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
