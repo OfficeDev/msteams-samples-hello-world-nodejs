@@ -1,12 +1,13 @@
-/*jslint node: true */
 'use strict';
 
 module.exports.setupTabs = function(app) {
     var path = require('path');
+    var express = require('express')
     
-    // Configure the view engine and views folder
+    // Configure the view engine, views folder and the statics path
     app.set('view engine', 'pug');
     app.set('views', path.join(__dirname, 'views'));
+    app.use(express.static(path.join(__dirname, 'static')));
     
     // Setup home page
     app.get('/', function(req, res) {

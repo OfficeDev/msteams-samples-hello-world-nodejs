@@ -4,16 +4,16 @@ var del = require('del');
 
 gulp.task('clean', function() {
     return del([
-        'dist/**/*'
+        'manifest/**/*'
     ])
 });
 
 gulp.task('generate-manifest', function() {
-    gulp.src(['images/*', 'src/manifest.json'])
+    gulp.src(['static/images/contoso*', 'src/manifest.json'])
         .pipe(zip('helloworldapp.zip'))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('manifest'));
 });
 
 gulp.task('default', ['clean', 'generate-manifest'], function() {
-    console.log('Build completed. Output in dist folder');
+    console.log('Build completed. Output in manifest folder');
 });

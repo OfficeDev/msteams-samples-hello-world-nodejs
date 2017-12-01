@@ -1,4 +1,3 @@
-/*jslint node: true */
 'use strict';
 
 var builder = require('botbuilder');
