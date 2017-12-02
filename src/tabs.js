@@ -5,9 +5,9 @@ module.exports.setupTabs = function(app) {
     var express = require('express')
     
     // Configure the view engine, views folder and the statics path
+    app.use(express.static(path.join(__dirname, 'static')));
     app.set('view engine', 'pug');
     app.set('views', path.join(__dirname, 'views'));
-    app.use(express.static(path.join(__dirname, 'static')));
     
     // Setup home page
     app.get('/', function(req, res) {

@@ -1,18 +1,13 @@
 extends layout.pug
 
-block scripts
-  script(src='https://statics.teams.microsoft.com/sdk/v1.0/js/MicrosoftTeams.min.js')
-  script
-    include configure.js
-
 block content
-  h1 Configure your app here
-
-  div
-    label(for='appTab')
-    | Select the tab you would like to see:
-    | 
-    select#appTab(name="appTab")
-      option(value='' selected=true) (Select a tab)
-      option(value='first') First
-      option(value='second') Second
+  div(class='font-semibold font-title') Configure your app here
+  p
+    div
+      label(for='tabChoice')
+      | Select the tab you would like to see:
+      | 
+      select#tabChoice(name='tabChoice')
+        option(value='' selected=true) (Select a tab)
+        option(value='first') First
+        option(value='second') Second
