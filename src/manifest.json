@@ -63,8 +63,8 @@
             "commands": [
                 {
                     "id": "getRandomText",
-                    "description": "Gets some random text and images that you can insert in messages",
-                    "title": "Get random text",
+                    "description": "Gets some random text and images that you can insert in messages for fun.",
+                    "title": "Get some random text for fun",
                     "initialRun": true,
                     "parameters": [
                         {
@@ -77,12 +77,6 @@
             ]
         }
     ],
-    "permissions": [
-        "identity",
-        "messageTeamMembers"
-    ],
-    "validDomains": [
-        "kteams.ngrok.io",
-        "*.kteams.ngrok.io"
-    ]
+    "permissions": [],
+    "validDomains": []
 }
