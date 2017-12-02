@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports.setupTabs = function(app) {
+module.exports.setup = function(app) {
     var path = require('path');
     var express = require('express')
     
