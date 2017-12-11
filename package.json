@@ -1,0 +1,32 @@
+{
+  "name": "msteams-nodejs-hello-world",
+  "version": "1.0.0",
+  "description": "Microsoft Teams Node.js Hello World App. Start here to build your first app in Teams platform.",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlesprakash/msteams-nodejs-hello-world.git"
+  },
+  "author": "charlesprakash",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/charlesprakash/msteams-nodejs-hello-world/issues"
+  },
+  "homepage": "https://github.com/charlesprakash/msteams-nodejs-hello-world#readme",
+  "dependencies": {
+    "botbuilder": "^3.11.0",
+    "botbuilder-teams": "^0.1.6",
+    "config": "^1.28.1",
+    "express": "^4.16.2",
+    "faker": "^4.1.0",
+    "pug": "^2.0.0-rc.4"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-zip": "^4.0.0"
+  }
+}
