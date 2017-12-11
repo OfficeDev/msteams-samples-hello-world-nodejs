@@ -2,7 +2,7 @@
     "$schema": "https://statics.teams.microsoft.com/sdk/v1.0/manifest/MicrosoftTeams.schema.json",
     "manifestVersion": "1.0",
     "version": "1.0.0",
-    "id": "f1d45e19-196c-4c7f-9c95-24b3d9c2a1f0",
+    "id": "00000000-0000-0000-0000-000000000000",
     "packageName": "com.contoso.helloworld",
     "developer": {
         "name": "Contoso",
@@ -23,60 +23,48 @@
         "color": "contoso96x96.png"
     },
     "accentColor": "#60A18E",
-    "staticTabs": [
-        {
-            "entityId": "com.contoso.helloworld.hellotab",
-            "name": "Hello Tab",
-            "contentUrl": "https://kteams.ngrok.io/hello",
-            "scopes": [
-                "personal"
-            ]
-        }
-    ],
-    "configurableTabs": [
-        {
-            "configurationUrl": "https://kteams.ngrok.io/configure",
-            "canUpdateConfiguration": true,
-            "scopes": [
-                "team"
-            ]
-        }
-    ],
-    "bots": [
-        {
-            "botId": "a2e4e1b7-2811-4d93-8b5c-8633208f34e5",
-            "needsChannelSelector": false,
-            "isNotificationOnly": false,
-            "scopes": [
-                "team",
-                "personal"
-            ]
-        }
-    ],
-    "composeExtensions": [
-        {
-            "botId": "a2e4e1b7-2811-4d93-8b5c-8633208f34e5",
-            "scopes": [
-                "personal",
-                "team"
-            ],
-            "commands": [
-                {
-                    "id": "getRandomText",
-                    "description": "Gets some random text and images that you can insert in messages for fun.",
-                    "title": "Get some random text for fun",
-                    "initialRun": true,
-                    "parameters": [
-                        {
-                            "name": "cardTitle",
-                            "description": "Card title to use",
-                            "title": "Card title"
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
+    "staticTabs": [{
+        "entityId": "com.contoso.helloworld.hellotab",
+        "name": "Hello Tab",
+        "contentUrl": "https://yourteamsapp.ngrok.io/hello",
+        "scopes": [
+            "personal"
+        ]
+    }],
+    "configurableTabs": [{
+        "configurationUrl": "https://yourteamsapp.ngrok.io/configure",
+        "canUpdateConfiguration": true,
+        "scopes": [
+            "team"
+        ]
+    }],
+    "bots": [{
+        "botId": "00000000-0000-0000-0000-000000000000",
+        "needsChannelSelector": false,
+        "isNotificationOnly": false,
+        "scopes": [
+            "team",
+            "personal"
+        ]
+    }],
+    "composeExtensions": [{
+        "botId": "00000000-0000-0000-0000-000000000000",
+        "scopes": [
+            "personal",
+            "team"
+        ],
+        "commands": [{
+            "id": "getRandomText",
+            "description": "Gets some random text and images that you can insert in messages for fun.",
+            "title": "Get some random text for fun",
+            "initialRun": true,
+            "parameters": [{
+                "name": "cardTitle",
+                "description": "Card title to use",
+                "title": "Card title"
+            }]
+        }]
+    }],
     "permissions": [],
     "validDomains": []
 }
