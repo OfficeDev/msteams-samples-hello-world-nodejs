@@ -1,6 +1,8 @@
 {
     "bot": {
-        "microsoftAppId": "00000000-0000-0000-0000-000000000000",
-        "microsoftAppPassword": "yourBotAppPassword"
+        "microsoftAppId": "f5431a2a-266f-4e77-aff1-732bc835a2aa",
+        "microsoftAppPassword": "atAEA899%*@uoqbdBIUL69$",
+        "microsoftAppName": "NEO",
+        "LuisModelURL": "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/076b5971-ebcf-4bc4-800b-a70b7e576d87?subscription-key=7573e136bf204aebbdd4fe3d391504be&spellCheck=true&bing-spell-check-subscription-key=e0879a4676b44921b0799cd69abfa8fd&verbose=true&timezoneOffset=0&q="
     }
 }

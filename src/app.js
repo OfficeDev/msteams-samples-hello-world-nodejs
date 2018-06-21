@@ -4,8 +4,8 @@ var express = require('express');
 var app = express();
 
 // Adding tabs to our app. This will setup routes to various views
-var tabs = require('./tabs');
-tabs.setup(app);
+//var tabs = require('./tabs');
+//tabs.setup(app);
 
 // Adding a bot to our app
 var bot = require('./bot');
