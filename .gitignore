@@ -60,3 +60,4 @@ typings/
 # Distributables
 dist/
 manifest/
+build/
