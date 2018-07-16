@@ -46,11 +46,6 @@ module.exports.setup = function (app) {
     var inMemoryStorage = new builder.MemoryBotStorage();
 
 // ####################################################
-// Load LUIS recognizer
-    var recognizer = new builder.LuisRecognizer(botConfig.LuisModelURL);
-    bot.recognizer(recognizer);
-
-// ####################################################
 // Default message - calls sendHelpMessage
 
     var bot = new builder.UniversalBot(connector, function (session) {
@@ -58,7 +53,12 @@ module.exports.setup = function (app) {
         session.send(helpMessage, session.message.text);
     }).set('storage', inMemoryStorage); // Register in memory storage
 
-    
+// ####################################################
+// Load LUIS recognizer
+var recognizer = new builder.LuisRecognizer(botConfig.LuisModelURL);
+bot.recognizer(recognizer);
+
+
 
 // ####################################################
 // Handle "Help" intent from LUIS - calls sendHelpMessage
