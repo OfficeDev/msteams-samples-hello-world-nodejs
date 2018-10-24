@@ -15,12 +15,14 @@ module.exports.setup = function(app) {
         appPassword: process.env.MICROSOFT_APP_PASSWORD || botConfig.microsoftAppPassword
     });
     
+    var inMemoryBotStorage = new builder.MemoryBotStorage();
+    
     // Define a simple bot with the above connector that echoes what it received
     var bot = new builder.UniversalBot(connector, function(session) {
         // Message might contain @mentions which we would like to strip off in the response
         var text = teams.TeamsMessage.getTextWithoutMentions(session.message);
         session.send('You said: %s', text);
-    });
+    }).set('storage', inMemoryBotStorage);
 
     // Setup an endpoint on the router for the bot to listen.
     // NOTE: This endpoint cannot be changed and must be api/messages
