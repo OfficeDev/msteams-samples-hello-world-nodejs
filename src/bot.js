@@ -4,15 +4,14 @@ module.exports.setup = function(app) {
     var builder = require('botbuilder');
     var teams = require('botbuilder-teams');
     var config = require('config');
-    var botConfig = config.get('bot');
     
     // Create a connector to handle the conversations
     var connector = new teams.TeamsChatConnector({
         // It is a bad idea to store secrets in config files. We try to read the settings from
-        // the environment variables first, and fallback to the config file.
-        // See node config module on how to create config files correctly per NODE environment
-        appId: process.env.MICROSOFT_APP_ID || botConfig.microsoftAppId,
-        appPassword: process.env.MICROSOFT_APP_PASSWORD || botConfig.microsoftAppPassword
+        // the config file (src/config/default.json) OR then environment variables.
+        // See node config module (https://www.npmjs.com/package/config) on how to create config files for your Node.js environment.
+        appId: config.get("bot.appId"),
+        appPassword: config.get("bot.appPassword")
     });
     
     var inMemoryBotStorage = new builder.MemoryBotStorage();
