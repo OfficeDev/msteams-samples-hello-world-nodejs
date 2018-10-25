@@ -10,8 +10,8 @@ module.exports.setup = function(app) {
         // It is a bad idea to store secrets in config files. We try to read the settings from
         // the config file (src/config/default.json) OR then environment variables.
         // See node config module (https://www.npmjs.com/package/config) on how to create config files for your Node.js environment.
-        appId: config.get("bot.appId") || process.env.MICROSOFT_APP_ID,
-        appPassword: config.get("bot.appPassword") || process.env.MICROSOFT_APP_PASSWORD
+        appId: config.get("bot.appId"),
+        appPassword: config.get("bot.appPassword")
     });
     
     var inMemoryBotStorage = new builder.MemoryBotStorage();
