@@ -13,6 +13,9 @@ module.exports.setup = function(app) {
         appId: config.get("bot.appId"),
         appPassword: config.get("bot.appPassword")
     });
+
+    console.log("cwd: " + process.cwd());
+    console.log("connector.settings.appId: " + connector.settings.appId);
     
     var inMemoryBotStorage = new builder.MemoryBotStorage();
     
