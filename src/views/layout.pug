@@ -1,14 +1,14 @@
 doctype html
-html(lang='en')
+html(lang="en")
   head
     title Microsoft Teams Hello World Sample App
-    link(rel='stylesheet', type='text/css', href='/styles/msteams-16.css')
-    link(rel='stylesheet', type='text/css', href='/styles/custom.css')
-    script(src='https://statics.teams.microsoft.com/sdk/v1.0/js/MicrosoftTeams.min.js')
-    script(src='/scripts/teamsapp.js')
+    link(rel="stylesheet", type="text/css", href="/styles/msteams-16.css")
+    link(rel="stylesheet", type="text/css", href="/styles/custom.css")
+    script(src="https://unpkg.com/@microsoft/teams-js@1.3.7/dist/MicrosoftTeams.min.js" integrity="sha384-glExfvkpce98dO2oN+diZ/Luv/5qrZJiOvWCeR8ng/ZxlhpvBgHKeVFRURrh+NEC" crossorigin="anonymous")
+    script(src="/scripts/teamsapp.js")
     block scripts
 
-  body(class='theme-light')
-    div(class='surface')
-      div(class='panel')
+  body(class="theme-light")
+    div(class="surface")
+      div(class="panel")
         block content
