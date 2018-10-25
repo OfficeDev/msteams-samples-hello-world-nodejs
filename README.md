@@ -4,7 +4,7 @@ More information for this sample - and for how to get started with Microsoft Tea
 
 # Using this sample locally
 
-This sample can be run locally using `ngrok` as described in the [official documentation](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-nodejs), but you'll need to set up some environment variables. There are many ways to do this, but the easiest, if you are using Visual Studio Code, is to add a [launch configuration]:
+This sample can be run locally using `ngrok` as described in the [official documentation](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-nodejs), but you'll need to set up some environment variables. There are many ways to do this, but the easiest, if you are using Visual Studio Code, is to add a [launch configuration](https://code.visualstudio.com/Docs/editor/debugging#_launch-configurations):
 
 ```json
 [...]
@@ -43,13 +43,15 @@ The easiest way to deploy to Azure is to use Visual Studio Code with Azure exten
 Once you've installed the extensions, you'll see a new Azure icon on the left in Visual Studio Code. Click on the + icon to create a new web app. Once you've created your web app:
 
 1. Add the following Application Settings (environment variables):
-  ```
-  MICROSOFT_APP_ID=<YOUR BOT'S APP ID>
-  MICROSOFT_APP_PASSWORD=<YOUR BOT'S APP PASSWORD>
-  WEBSITE_NODE_DEFAULT_VERSION=8.9.4
-  ```
+
+   ```
+   MICROSOFT_APP_ID=<YOUR BOT'S APP ID>
+   MICROSOFT_APP_PASSWORD=<YOUR BOT'S APP PASSWORD>
+   WEBSITE_NODE_DEFAULT_VERSION=8.9.4
+   ```
+   
 1. Configure the Deployment Source for your app (either your local copy of this repository or one you've forked on GitHub).
-1. Deploy your web app. Visual Studio will tell you when you are done.
+1. Deploy your web app. Visual Studio Code will tell you when you are done.
 
 ## Deploying to Azure for Node.js on Windows
 
