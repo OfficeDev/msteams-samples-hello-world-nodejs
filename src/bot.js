@@ -4,7 +4,13 @@ module.exports.setup = function(app) {
     var builder = require('botbuilder');
     var teams = require('botbuilder-teams');
     var config = require('config');
-    
+
+    if (!config.has("bot.appId")) {
+        // We are running locally; fix up the location of the config directory and re-intialize config
+        process.env.NODE_CONFIG_DIR = "../config";
+        delete require.cache[require.resolve('config')];
+        config = require('config');
+    }
     // Create a connector to handle the conversations
     var connector = new teams.TeamsChatConnector({
         // It is a bad idea to store secrets in config files. We try to read the settings from
