@@ -7,7 +7,7 @@ module.exports.setup = function(app) {
 
     if (!config.has("bot.appId")) {
         // We are running locally; fix up the location of the config directory and re-intialize config
-        process.env.NODE_CONFIG_DIR = "../config";
+        process.env.NODE_CONFIG_DIR = "./config";
         delete require.cache[require.resolve('config')];
         config = require('config');
     }
