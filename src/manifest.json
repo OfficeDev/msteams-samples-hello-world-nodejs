@@ -49,10 +49,6 @@
     }],
     "composeExtensions": [{
         "botId": "00000000-0000-0000-0000-000000000000",
-        "scopes": [
-            "personal",
-            "team"
-        ],
         "commands": [{
             "id": "getRandomText",
             "description": "Gets some random text and images that you can insert in messages for fun.",
