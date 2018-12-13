@@ -1,6 +1,6 @@
 # Official documentation
 
-More information for this sample - and for how to get started with Microsoft Teams development in general - is found in [Get started on the Microsoft Teams platform with Node.js](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-nodejs).
+More information for this sample - and for how to get started with Microsoft Teams development in general - is found in [Get started on the Microsoft Teams platform with Node.js](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-nodejs-app-studio).
 
 # Using this sample locally
 
