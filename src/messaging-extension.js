@@ -13,6 +13,8 @@ module.exports.setup = function() {
             ? query.parameters[0].value
             : faker.lorem.sentence();
 
+        let randomImageUrl = "https://loremflickr.com/200/200"; // Faker's random images uses lorempixel.com, which has been down a lot
+
         // Build the data to send
         var attachments = [];
 
@@ -22,7 +24,7 @@ module.exports.setup = function() {
                 new builder.ThumbnailCard()
                     .title(title)
                     .text(faker.lorem.paragraph())
-                    .images([new builder.CardImage().url(faker.image.image())])
+                    .images([new builder.CardImage().url(`${randomImageUrl}?random=${i}`)])
                     .toAttachment());
         }
 

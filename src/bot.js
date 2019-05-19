@@ -25,16 +25,42 @@ module.exports.setup = function (app) {
     var builder = require('botbuilder');
     var teams = require('botbuilder-teams');
     var config = require('config');
-    var botConfig = config.get('bot');
+//    var botConfig = config.get('bot');
 
 
 // ####################################################
 // Create a connector to handle the conversations
+//
+ //   var connector = new teams.TeamsChatConnector({
+ //       appId: process.env.MICROSOFT_APP_ID || botConfig.microsoftAppId,
+ //       appPassword: process.env.MICROSOFT_APP_PASSWORD || botConfig.microsoftAppPassword
+ //   });
 
+
+  if (!config.has("bot.appId")) {
+        // We are running locally; fix up the location of the config directory and re-intialize config
+        process.env.NODE_CONFIG_DIR = "../config";
+        delete require.cache[require.resolve('config')];
+        config = require('config');
+    }
+    // Create a connector to handle the conversations
     var connector = new teams.TeamsChatConnector({
-        appId: process.env.MICROSOFT_APP_ID || botConfig.microsoftAppId,
-        appPassword: process.env.MICROSOFT_APP_PASSWORD || botConfig.microsoftAppPassword
+        // It is a bad idea to store secrets in config files. We try to read the settings from
+        // the config file (/config/default.json) OR then environment variables.
+        // See node config module (https://www.npmjs.com/package/config) on how to create config files for your Node.js environment.
+        appId: config.get("bot.appId"),
+        appPassword: config.get("bot.appPassword")
     });
+    
+    var inMemoryBotStorage = new builder.MemoryBotStorage();
+    
+    // Define a simple bot with the above connector that echoes what it received
+    var bot = new builder.UniversalBot(connector, function(session) {
+        // Message might contain @mentions which we would like to strip off in the response
+        var text = teams.TeamsMessage.getTextWithoutMentions(session.message);
+        session.send('You said: %s', text);
+    }).set('storage', inMemoryBotStorage);
+  
 
 
 // ####################################################
