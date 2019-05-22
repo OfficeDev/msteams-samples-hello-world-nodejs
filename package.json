@@ -18,7 +18,7 @@
   "homepage": "https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-nodejs",
   "dependencies": {
     "botbuilder": "^3.11.0",
-    "botbuilder-teams": "^0.1.6",
+    "botbuilder-teams": "^0.2.5",
     "config": "^1.28.1",
     "express": "^4.16.2",
     "faker": "^4.1.0",
