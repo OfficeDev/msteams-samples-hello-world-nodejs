@@ -4,6 +4,8 @@ products:
 - office-365
 languages:
 - javascript
+title: Microsoft Teams NodeJS Helloworld Sample
+description: Microsoft Teams hello world sample app in Node.js
 extensions:
   contentType: samples
   createdDate: 11/3/2017 12:53:17 PM
