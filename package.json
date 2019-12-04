@@ -22,7 +22,7 @@
     "config": "^1.28.1",
     "express": "^4.16.2",
     "faker": "^4.1.0",
-    "pug": "^2.0.0-rc.4"
+    "pug": "^2.0.4"
   },
   "devDependencies": {
     "del": "^3.0.0",
