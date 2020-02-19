@@ -2,7 +2,7 @@
 
 module.exports.setup = function(app) {
     var path = require('path');
-    var express = require('express')
+    var express = require('express');
     
     // Configure the view engine, views folder and the statics path
     app.use(express.static(path.join(__dirname, 'static')));
