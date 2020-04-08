@@ -1,34 +1,46 @@
-'use strict';
+import fs from 'fs'
 
-module.exports.setup = function(app) {
-    var path = require('path');
-    var express = require('express')
-    
-    // Configure the view engine, views folder and the statics path
-    app.use(express.static(path.join(__dirname, 'static')));
-    app.set('view engine', 'pug');
-    app.set('views', path.join(__dirname, 'views'));
-    
+export default function tabs(server) {
+
+    var staticBasePath = 'src/views/';
     // Setup home page
-    app.get('/', function(req, res) {
-        res.render('hello');
+    server.get('/', (req, res, next) => {
+        fs.readFile(staticBasePath + 'hello.html', 'utf8', function(err, data) {
+            if (err) throw err;
+            res.send(data);
+        });
     });
-    
-    // Setup the static tab
-    app.get('/hello', function(req, res) {
-        res.render('hello');
-    });
-    
-    // Setup the configure tab, with first and second as content tabs
-    app.get('/configure', function(req, res) {
-        res.render('configure');
-    });    
 
-    app.get('/first', function(req, res) {
-        res.render('first');
+    // Setup the static tab
+    server.get('/hello', (req, res, next) => {
+        fs.readFile(staticBasePath + 'hello.html', 'utf8', function(err, data) {
+            if (err) throw err;
+            res.send(data);
+        });
     });
-    
-    app.get('/second', function(req, res) {
-        res.render('second');
-    });    
-};
+
+    // Setup the configure tab, with first and second as content tabs
+    server.get('/configure', (req, res, next) => {
+        fs.readFile(staticBasePath + 'configure.html', 'utf8', function(err, data) {
+            if (err) throw err;
+            res.send(data);
+        });
+    });
+
+    server.get('/first', (req, res, next) => {
+        fs.readFile(staticBasePath + 'first.html', 'utf8', function(err, data) {
+            if (err) throw err;
+            res.send(data);
+        });
+    });
+
+    server.get('/second', (req, res, next) => {
+        fs.readFile(staticBasePath + 'second.html', 'utf8', function(err, data) {
+            if (err) throw err;
+            res.send(data);
+        });
+    });
+}
+
+
+

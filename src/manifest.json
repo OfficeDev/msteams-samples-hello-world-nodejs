@@ -23,44 +23,56 @@
         "color": "contoso96x96.png"
     },
     "accentColor": "#60A18E",
-    "staticTabs": [{
-        "entityId": "com.contoso.helloworld.hellotab",
-        "name": "Hello Tab",
-        "contentUrl": "https://yourteamsapp.ngrok.io/hello",
-        "scopes": [
-            "personal"
-        ]
-    }],
-    "configurableTabs": [{
-        "configurationUrl": "https://yourteamsapp.ngrok.io/configure",
-        "canUpdateConfiguration": true,
-        "scopes": [
-            "team"
-        ]
-    }],
-    "bots": [{
-        "botId": "00000000-0000-0000-0000-000000000000",
-        "needsChannelSelector": false,
-        "isNotificationOnly": false,
-        "scopes": [
-            "team",
-            "personal"
-        ]
-    }],
-    "composeExtensions": [{
-        "botId": "00000000-0000-0000-0000-000000000000",
-        "commands": [{
-            "id": "getRandomText",
-            "description": "Gets some random text and images that you can insert in messages for fun.",
-            "title": "Get some random text for fun",
-            "initialRun": true,
-            "parameters": [{
-                "name": "cardTitle",
-                "description": "Card title to use",
-                "title": "Card title"
-            }]
-        }]
-    }],
+    "staticTabs": [
+        {
+            "entityId": "com.contoso.helloworld.hellotab",
+            "name": "Hello Tab",
+            "contentUrl": "https://yourteamsapp.ngrok.io/hello",
+            "scopes": [
+                "personal"
+            ]
+        }
+    ],
+    "configurableTabs": [
+        {
+            "configurationUrl": "https://yourteamsapp.ngrok.io/configure",
+            "canUpdateConfiguration": true,
+            "scopes": [
+                "team"
+            ]
+        }
+    ],
+    "bots": [
+        {
+            "botId": "00000000-0000-0000-0000-000000000000",
+            "needsChannelSelector": false,
+            "isNotificationOnly": false,
+            "scopes": [
+                "team",
+                "personal"
+            ]
+        }
+    ],
+    "composeExtensions": [
+        {
+            "botId": "00000000-0000-0000-0000-000000000000",
+            "commands": [
+                {
+                    "id": "getRandomText",
+                    "description": "Gets some random text and images that you can insert in messages for fun.",
+                    "title": "Get some random text for fun",
+                    "initialRun": true,
+                    "parameters": [
+                        {
+                            "name": "cardTitle",
+                            "description": "Card title to use",
+                            "title": "Card title"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
     "permissions": [],
     "validDomains": []
 }

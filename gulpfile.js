@@ -10,7 +10,7 @@ gulp.task('clean', function(done) {
 
 gulp.task('generate-manifest', function(done) {
     gulp.src(['src/static/images/contoso*', 'src/manifest.json'])
-        .pipe(zip('helloworldapp.zip'))
+        .pipe(zip('helloworld.zip'))
         .pipe(gulp.dest('manifest'), done);
     done();
 });
