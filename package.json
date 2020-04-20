@@ -1,7 +1,7 @@
 {
   "name": "msteams-nodejs-hello-world",
   "version": "1.0.0",
-  "description": "Microsoft Teams hello world sample app in written in ES6 with bot framework v4",
+  "description": "Microsoft Teams Hello World sample app written in ES6 with Bot Framework v4 SDK",
   "scripts": {
     "start": "nodemon --exec babel-node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
