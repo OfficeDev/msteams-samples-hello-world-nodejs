@@ -14,21 +14,21 @@ import { ActivityTypes } from 'botbuilder';
 const ENV_FILE = path.join(__dirname, '.env');
 require('dotenv').config({ path: ENV_FILE });
 
-
 //Create HTTP server.
-const server = restify.createServer(
-    {
-      formatters: {
+const server = restify.createServer({
+    formatters: {
         'text/html': function (req, res, body) {
-          return  body
-      }
-    }
-  })
+            return body;
+        },
+    },
+});
 
-  server.get('/*', restify.plugins.serveStatic({
-    directory: __dirname + '/static',
-}));
-
+server.get(
+    '/*',
+    restify.plugins.serveStatic({
+        directory: __dirname + '/static',
+    })
+);
 
 server.listen(process.env.port || process.env.PORT || 3333, function () {
     console.log(`\n${server.name} listening to ${server.url}`);
@@ -45,15 +45,9 @@ const messageExtension = new MessageExtension();
 
 // Listen for incoming requests.
 server.post('/api/messages', (req, res) => {
-
-
     adapter.processActivity(req, res, async (context) => {
         if (context.activity.type === ActivityTypes.Invoke)
             await messageExtension.run(context);
-        else
-            await bot.run(context);
+        else await bot.run(context);
     });
-
 });
-
-
