@@ -1,38 +1,53 @@
-'use strict';
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
-module.exports.setup = function(app) {
-    var builder = require('botbuilder');
-    var teams = require('botbuilder-teams');
-    var config = require('config');
+import {
+    TeamsActivityHandler,
+    BotFrameworkAdapter,
+    MemoryStorage,
+    ConversationState,
+    TurnContext,
+} from 'botbuilder';
+import config from 'config';
 
-    if (!config.has("bot.appId")) {
-        // We are running locally; fix up the location of the config directory and re-intialize config
-        process.env.NODE_CONFIG_DIR = "../config";
-        delete require.cache[require.resolve('config')];
-        config = require('config');
-    }
-    // Create a connector to handle the conversations
-    var connector = new teams.TeamsChatConnector({
-        // It is a bad idea to store secrets in config files. We try to read the settings from
-        // the config file (/config/default.json) OR then environment variables.
-        // See node config module (https://www.npmjs.com/package/config) on how to create config files for your Node.js environment.
-        appId: config.get("bot.appId"),
-        appPassword: config.get("bot.appPassword")
-    });
-    
-    var inMemoryBotStorage = new builder.MemoryBotStorage();
-    
-    // Define a simple bot with the above connector that echoes what it received
-    var bot = new builder.UniversalBot(connector, function(session) {
-        // Message might contain @mentions which we would like to strip off in the response
-        var text = teams.TeamsMessage.getTextWithoutMentions(session.message);
-        session.send('You said: %s', text);
-    }).set('storage', inMemoryBotStorage);
+// Create adapter.
+// See https://aka.ms/about-bot-adapter to learn more about adapters.
+export const adapter = new BotFrameworkAdapter({
+    appId: config.get('bot.appId'),
+    appPassword: config.get('bot.appPassword'),
+});
 
-    // Setup an endpoint on the router for the bot to listen.
-    // NOTE: This endpoint cannot be changed and must be api/messages
-    app.post('/api/messages', connector.listen());
+adapter.onTurnError = async (context, error) => {
+    const errorMsg = error.message
+        ? error.message
+        : `Oops. Something went wrong!`;
+    // This check writes out errors to console log .vs. app insights.
+    // NOTE: In production environment, you should consider logging this to Azure
+    //       application insights.
+    console.error(`\n [onTurnError] unhandled error: ${error}`);
 
-    // Export the connector for any downstream integration - e.g. registering a messaging extension
-    module.exports.connector = connector;
+    // Clear out state
+    await conversationState.delete(context);
+    // Send a message to the user
+    await context.sendActivity(errorMsg);
+
+    // Note: Since this Messaging Extension does not have the messageTeamMembers permission
+    // in the manifest, the bot will not be allowed to message users.
 };
+
+// Define state store for your bot.
+const memoryStorage = new MemoryStorage();
+
+// Create conversation state with in-memory storage provider.
+const conversationState = new ConversationState(memoryStorage);
+
+export class EchoBot extends TeamsActivityHandler {
+    constructor() {
+        super();
+        this.onMessage(async (context, next) => {
+            TurnContext.removeRecipientMention(context.activity);
+            const text = context.activity.text.trim().toLocaleLowerCase();
+            await context.sendActivity('You said ' + text);
+        });
+    }
+}

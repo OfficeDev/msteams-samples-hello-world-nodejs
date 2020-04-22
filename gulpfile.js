@@ -19,3 +19,4 @@ gulp.task('default', gulp.series('clean', 'generate-manifest'), function(done) {
     console.log('Build completed. Output in manifest folder');
     done();
 });
+

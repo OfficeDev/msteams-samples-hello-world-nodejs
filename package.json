@@ -1,9 +1,9 @@
 {
   "name": "msteams-nodejs-hello-world",
   "version": "1.0.0",
-  "description": "Microsoft Teams Node.js Hello World App. Start here to build your first app on the Teams platform.",
+  "description": "Microsoft Teams Hello World sample app written in ES6 with Bot Framework v4 SDK",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "nodemon --exec babel-node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,16 +17,26 @@
   },
   "homepage": "https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-nodejs",
   "dependencies": {
-    "botbuilder": "^3.11.0",
+    "@babel/polyfill": "^7.8.7",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "botbuilder": "^4.8.0",
     "botbuilder-teams": "^0.2.6",
     "config": "^1.28.1",
+    "core-js": "^2.6.11",
+    "dotenv": "^8.2.0",
     "express": "^4.16.2",
     "faker": "^4.1.0",
-    "pug": "^2.0.0-rc.4"
+    "restify": "^8.5.1",
+    "send": "^0.17.1"
   },
   "devDependencies": {
-    "del": "^3.0.0",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
-    "gulp-zip": "^4.0.0"
+    "gulp-zip": "^5.0.1"
   }
 }
