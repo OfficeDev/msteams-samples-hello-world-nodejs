@@ -56,12 +56,12 @@ Once you've installed the extensions, you'll see a new Azure icon on the left in
 
 1. Add the following Application Settings (environment variables):
 
-   ```
-   MICROSOFT_APP_ID=<YOUR BOT'S APP ID>
-   MICROSOFT_APP_PASSWORD=<YOUR BOT'S APP PASSWORD>
-   WEBSITE_NODE_DEFAULT_VERSION=8.9.4
-   ```
-   
+    ```
+    MICROSOFT_APP_ID=<YOUR BOT'S APP ID>
+    MICROSOFT_APP_PASSWORD=<YOUR BOT'S APP PASSWORD>
+    WEBSITE_NODE_DEFAULT_VERSION=8.9.4
+    ```
+
 1. Configure the Deployment Source for your app (either your local copy of this repository or one you've forked on GitHub).
 1. Deploy your web app. Visual Studio Code will tell you when you are done.
 
@@ -76,7 +76,7 @@ command = deploy.cmd
 
 # Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.microsoft.com.
 
@@ -88,6 +88,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 =======
+
 # Official documentation
 
 More information for this sample - and for how to get started with Microsoft Teams development in general - is found in [Get started on the Microsoft Teams platform with Node.js and App Studio](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-nodejs-app-studio).
@@ -154,7 +155,7 @@ command = deploy.cmd
 
 # Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.microsoft.com.
 
@@ -166,3 +167,13 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
+# Common Issues
+
+* If you are getting an error with `npm install` try deleting `package-lock.json` and re-running `npm install`
+
+* If you are getting `Uncaught SyntaxError: Unexpected identifier` for the first import statement in `app.js`
+run
+
+    ```
+    npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/node
+    ```
