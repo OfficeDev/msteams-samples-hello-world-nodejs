@@ -10,6 +10,8 @@ extensions:
   contentType: samples
   createdDate: 11/3/2017 12:53:17 PM
 ---
+#### **NOTE:** This repository is now archived. Its contents have moved [here](https://github.com/OfficeDev/Microsoft-Teams-Samples/tree/main/samples/app-hello-world/nodejs).
+
 # Official documentation
 
 More information for this sample - and for how to get started with Microsoft Teams development in general - is found in [Get started on the Microsoft Teams platform with Node.js and App Studio](https://docs.microsoft.com/en-us/microsoftteams/platform/get-started/get-started-nodejs-app-studio).
