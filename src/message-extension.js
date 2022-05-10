@@ -1,8 +1,6 @@
 import { TeamsActivityHandler, CardFactory } from 'botbuilder';
 import faker from 'faker';
 
-
-
 export default class MessageExtension extends TeamsActivityHandler {
     async handleTeamsMessagingExtensionQuery(context, query) {
 
@@ -26,7 +24,6 @@ export default class MessageExtension extends TeamsActivityHandler {
                     preview.content.tap = { type: 'invoke', value: { title, text, images } };
                     var attachment = { ...thumbnailCard, preview }
                     attachments.push(attachment);
-
                 }
 
                 return {
@@ -36,9 +33,8 @@ export default class MessageExtension extends TeamsActivityHandler {
                         attachments: attachments
                     }
                 };
-
             default:
-                break;
+            break;
         }
         return null;
     }
